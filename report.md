@@ -38,9 +38,14 @@ Les conteneurs sont des structures de données qui peuvent contenir plusieurs é
 - **Tuples (Tuple) :**  
 représentés par des parenthèses (), permettent de stocker une séquence ordonnée d'éléments. Les tuples sont immuables, c'est-à-dire qu'ils ne peuvent pas être modifiés une fois créés. 
 
+- **Sets (Set) :** représentés par des accolades {}, permettent de stocker des éléments uniques, sans ordre particulier.
+
+
 - **Dictionnaires (Dictionary) :**  
 représentés par des accolades {}, permettent de stocker des paires clé-valeur. Chaque élément du dictionnaire est constitué d'une clé et d'une valeur associée.  
 ```Exemple : {23: 'deux-trois'}```
+
+Le tupple et le dictionnaire sont des conteneurs hashable, c'est-à-dire qu'ils peuvent être utilisés comme clé dans un dictionnaire ou comme élément d'un set.
 
 ```python
 # Création d'une Hashtable
@@ -51,8 +56,8 @@ hashtable["fruit"] = "pomme"
 hashtable["animal"] = "chien"
 hashtable["couleur"] = "rouge"
 
-# Accès aux éléments de la Hashtable
-print(hashtable["fruit"])  # Affiche "pomme"
+# Accès aux éléments de la Hashtable par la clé
+print(hashtable["fruit"])  # Affiche "pomme
 print(hashtable["animal"])  # Affiche "chien"
 print(hashtable["couleur"])  # Affiche "rouge"
 
@@ -65,13 +70,10 @@ del hashtable["animal"]
 print(hashtable.get("animal"))  # Affiche None (l'élément a été supprimé)
 ```
 
-- Sets (Set) : représentés par des accolades {}, permettent de stocker des éléments uniques, sans ordre particulier.
-
-Le tupple et le dictionnaire sont des conteneurs hashable, c'est-à-dire qu'ils peuvent être utilisés comme clé dans un dictionnaire ou comme élément d'un set.
 
 
 
-### Classe
+## Classe et objets
 
 En Python, les classes sont des structures qui permettent de définir des objets avec leurs propres attributs (variables) et méthodes (fonctions).
 
@@ -147,7 +149,7 @@ x += 5  # Addition et affectation
 y -= 3  # Soustraction et affectation
 ```
 
-6. **Opérateurs de concaténation :  **
+6. **Opérateurs de concaténation :**  
 ```python 
 chaine1 = "Bonjour"
 chaine2 = "Python"
@@ -202,11 +204,15 @@ is not : Teste si deux objets ne sont pas identiques.
 x = [1, 2, 3]
 y = x
 print(y is x)  # Vérifie si 'y' et 'x' font référence au même objet
+# Résultat 
+# True
 
 # Opérateur 'is not'
 a = 5
 b = 10
 print(a is not b)  # Vérifie si 'a' et 'b' ne font pas référence au même objet
+# Résultat 
+# True
 ```
 
 10. **Opérateurs ternaires :**
@@ -244,7 +250,8 @@ print(informations_combinees) # Affiche {'nom': 'Alice', 'age': 25, 'ville': 'Pa
 ```
 ## Fonctions
 
-Une fonction est un bloc de code qui peut être appelé pour effectuer une tâche spécifique. Une fonction peut avoir des paramètres et renvoyer une valeur.
+Une fonction est un bloc de code qui peut être appelé pour effectuer une tâche spécifique. 
+Une fonction peut avoir des paramètres et renvoyer une valeur.
 
 ```python
 def addition(a, b):
@@ -252,7 +259,7 @@ def addition(a, b):
     return resultat 
 ```
 
-- **parametre1** et **parametre2** sont les paramètres de la fonction. Ils peuvent être utilisés dans le corps de la fonction.
+- **a** et **b** sont les paramètres de la fonction. Ils peuvent être utilisés dans le corps de la fonction.
 - **return** est un mot-clé qui permet de renvoyer une valeur à l'appelant de la fonction.
 
 Des fonctions prédéfinies sont disponibles dans Python.
@@ -293,7 +300,7 @@ print(list(resultat))  # Renvoie [2, 4]
 Lors de la définition d'une fonction en Python, les paramètres spéciaux *args et **kwargs peuvent être utilisés pour accepter un nombre variable d'arguments positionnels et d'arguments nommés.
 
 ### **args**
-L'usage de *args permet de capturer un nombre variable d'arguments positionnels et de les regrouper dans un tuple.
+L'usage de *args permet de capturer un nombre variable d'arguments positionnels (ordre important) et de les regrouper dans un tuple.
 
 ### **kwargs**
 L'usage de **kwargs permet de capturer un nombre variable d'arguments nommés et de les regrouper dans un dictionnaire.
