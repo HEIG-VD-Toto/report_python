@@ -6,8 +6,109 @@ author:
 professor: "Yves Chevallier"
 date: "06.06.2023"
 ---
+# qu'est ce que python ? 
 
-# Cours python : base
+## Historique de Python :
+
+Python a été créé par Guido van Rossum et sa première version a été publiée en 1991. Le nom du langage a été inspiré par la passion de Guido pour la série télévisée britannique "Monty Python's Flying Circus". Depuis lors, Python a connu une croissance exponentielle de sa popularité et est devenu l'un des langages de programmation les plus utilisés dans le monde.
+
+## Installation de Python :
+
+Pour commencer à programmer en Python, vous devez d'abord installer l'interpréteur Python sur votre système. Voici les étapes générales pour l'installation de Python :
+
+Rendez-vous sur le site officiel de Python (https://www.python.org) et téléchargez la dernière version stable de Python adaptée à votre système d'exploitation (Windows, macOS, Linux, etc.).
+
+Lancez l'installateur téléchargé et suivez les instructions à l'écran. Assurez-vous de cocher la case "Add Python to PATH" (Ajouter Python au chemin d'accès) lors de l'installation, afin que vous puissiez exécuter des scripts Python depuis n'importe quel répertoire de votre système.
+
+Une fois l'installation terminée, vous pouvez ouvrir l'invite de commande (sur Windows, utilisez PowerShell ou CMD) ou un terminal (sur macOS et Linux) et tapez la commande python ou python3 pour vérifier que Python est correctement installé. Vous devriez voir s'afficher la version de Python installée et l'invite de commande Python (>>>) prête à recevoir du code.
+
+## Premiers pas avec l'interpréteur Python :
+
+Une fois que vous avez installé Python, vous pouvez commencer à interagir avec l'interpréteur Python en mode interactif. Voici quelques étapes pour démarrer :
+
+Ouvrez l'invite de commande ou le terminal.
+
+Tapez python ou python3 pour lancer l'interpréteur Python.
+
+Vous verrez l'invite de commande Python (>>>) prête à recevoir du code.
+
+## charte de python 
+La "Charte de Python" est un ensemble de principes directeurs et de valeurs qui guident le développement et l'évolution du langage Python. Elle est souvent résumée par le document appelé "The Zen of Python" (L'art de Python), qui peut être consulté en tapant import this dans l'interpréteur Python. 
+
+``` 
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+```
+soit :
+```
+Beau vaut mieux que laid.
+Explicite vaut mieux qu'implicite.
+Simple vaut mieux que complexe.
+Complexe vaut mieux que compliqué.
+Plat vaut mieux que imbriqué.
+Dispersé vaut mieux que dense.
+La lisibilité compte.
+Les cas spéciaux ne sont pas assez spéciaux pour enfreindre les règles.
+Bien que la praticité l'emporte sur la pureté.
+Les erreurs ne doivent jamais passer silencieusement.
+À moins d'être explicitement réduites au silence.
+Face à l'ambiguïté, refusez la tentation de deviner.
+Il devrait y avoir une façon -- et de préférence une seule -- évidente de le faire.
+Bien que cette façon puisse ne pas être évidente au premier abord, à moins d'être néerlandais.
+Maintenant vaut mieux que jamais.
+Bien que jamais soit souvent mieux que maintenant.
+Si la mise en œuvre est difficile à expliquer, c'est une mauvaise idée.
+Si la mise en œuvre est facile à expliquer, c'est peut-être une bonne idée.
+Les espaces de noms sont une excellente idée - faisons-en plus !
+```
+
+Voici les principes clés de la charte de Python (un peu plus expliqué) :
+
+- Lisibilité compte :
+Le code Python doit être facile à lire et à comprendre. Il doit favoriser la clarté plutôt que la complexité.
+
+- Explicit is better than implicit (L'explicite vaut mieux que l'implicite) :
+Le code Python doit être explicite et non ambigu. Les choses doivent être exprimées de manière claire plutôt que laissées à deviner.
+
+- Les exceptions ne doivent pas être ignorées :
+Les erreurs et les exceptions ne doivent pas être ignorées. Il est préférable de les traiter et de gérer les situations exceptionnelles correctement.
+
+- La simplicité :
+Le langage Python encourage la simplicité et l'élégance du code. Les solutions simples sont préférées aux solutions compliquées.
+
+- Lisibilité du code :
+Le code Python doit être écrit de manière à être facilement lu et compris par les autres développeurs. La lisibilité est une priorité.
+
+- Les modules :
+Les fonctionnalités doivent être regroupées en modules plutôt que d'avoir un code monolithique. Les modules permettent une meilleure organisation et réutilisation du code.
+
+- L'importance de la communauté :
+Python valorise et encourage une communauté active et participative. La collaboration, le partage de connaissances et l'entraide sont essentiels.
+
+- La diversité :
+Python accueille et encourage la diversité des utilisateurs, des contributeurs et des idées. Il s'efforce d'être inclusif et ouvert à tous.
+
+- L'évolution continue :
+Python est un langage en constante évolution. Il s'adapte et se développe pour répondre aux besoins changeants des utilisateurs et de la technologie.
+
+# Initiation
 
 ## Structure de donnée
 
@@ -70,8 +171,6 @@ del hashtable["animal"]
 print(hashtable.get("animal"))  # Affiche None (l'élément a été supprimé)
 ```
 
-
-
 ## Structure de contrôle
 
 ### Condition
@@ -92,23 +191,22 @@ else:
 
 Les boucles permettent d'exécuter un bloc de code plusieurs fois.
 
+La boucle for est une structure de contrôle en Python utilisée pour itérer sur une séquence d'éléments, tels qu'une liste, un tuple, une chaîne de caractères, etc. La syntaxe générale de la boucle for est la suivante :
 ```python
 # Exemple de boucle for
-for i in range(5):
+for i in range(3):
     print(i)
 
 # Résultat :
 # 0
 # 1
 # 2
-# 3
-# 4
 ```
-
+La boucle while est une structure de contrôle en Python qui permet d'exécuter un bloc de code tant qu'une condition donnée est évaluée à True. La syntaxe générale de la boucle while est la suivante :
 ```python
 # Exemple de boucle while
 i = 0
-while i < 5:
+while i < 3:
     print(i)
     i += 1
 
@@ -116,9 +214,17 @@ while i < 5:
 # 0
 # 1
 # 2
-# 3
-# 4
 ```
+
+Les compréhensions de listes (list comprehensions) sont une fonctionnalité puissante de Python qui permet de créer facilement des listes à partir d'une syntaxe concise.
+```python
+liste_carres_pairs = [x**2 for x in range(1, 11) if x % 2 == 0]
+
+# Affichage de la liste résultante
+print(liste_carres_pairs)
+# [4, 16, 36, 64, 100]
+```
+
 
 ### Instruction de contrôle 
 
@@ -165,54 +271,6 @@ for i in range(4):
 # 0
 # 1
 # 3
-```
-
-
-
-
-
-
-## Classe et objets
-
-En Python, les classes sont des structures qui permettent de définir des objets avec leurs propres attributs (variables) et méthodes (fonctions).
-
-
-- La méthode __init__ est l'initialisateur de classe. Elle est appelée automatiquement lors de la création d'un nouvel objet à partir de la classe.
-
-- La méthode __next__ est utilisée dans la définition d'un itérateur. Elle est appelée pour obtenir l'élément suivant d'une séquence lorsque l'itérateur est utilisé.
-
-- La méthode __iter__ est utilisée pour retourner un itérateur sur une séquence dans une classe. 
-
-```python
-class NombrePairs:
-    def __init__(self, limite):
-        self.limite = limite
-        self.nombre = 0
-
-    def __iter__(self):
-        return self
-
-    def __next__(self):
-        if self.nombre >= self.limite:
-            raise StopIteration
-        else:
-            resultat = self.nombre
-            self.nombre += 2
-            return resultat
-
-
-# Utilisation de la classe NombrePairs
-nombres = NombrePairs(10)  # Crée une instance de la classe avec une limite de 10
-
-for nombre in nombres:
-    print(nombre)
-
-# Résultat :
-# 0
-# 2
-# 4
-# 6
-# 8
 ```
 
 ## Opérateur
@@ -275,7 +333,10 @@ for personne in personnes:
 
 ```python 
 liste = [1, 2, 3, 4, 5]
-print(liste[2])  # Accès à l'élément à l'indice 2 de la liste
+liste.append(6)
+
+print(liste)  # Accès à l'élément à l'indice 2 de la liste
+# [1,2,3,4,5,6]
 ```
 ```python
 personne = {
@@ -347,6 +408,8 @@ informations_combinees = {**informations_base, **informations_supplementaires}
 # Affichage du dictionnaire combiné
 print(informations_combinees) # Affiche {'nom': 'Alice', 'age': 25, 'ville': 'Paris', 'profession': 'Ingénieur'}
 ```
+
+
 ## Fonctions
 
 Une fonction est un bloc de code qui peut être appelé pour effectuer une tâche spécifique. 
@@ -365,7 +428,6 @@ Il existe de nombreuses fonctions prédéfinies (aussi appelées fonctions inté
 
 Telles que :
 
-- **input()** : permet de demander à l'utilisateur d'entrer une valeur.
 - **print()** : affiche un message à l'écran.
 - **len()** : renvoie la longueur d'une séquence.
 - **all()** : renvoie True si tous les éléments d'une séquence sont True.
@@ -422,6 +484,84 @@ fonction_example(1, 2, 3, nom='Alice', age=25) # Affiche :
 # Argument nommé : nom = Alice
 # Argument nommé : age = 25
 ```
+## Exercice première partie
+
+### Énoncé de l'exercice : 
+
+Écrivez un programme Python qui demande à l'utilisateur de saisir le nom, l'âge et le pays d'origine de trois personnes **(Utiliser la fonction input())**, puis stocke ces informations dans une liste de dictionnaires. Ensuite, le programme doit afficher les informations de chaque personne en utilisant une boucle for.
+
+### Correction :
+```python 
+# Création de la liste pour stocker les informations des personnes
+personnes = []
+
+# Saisie des informations pour chaque personne
+for i in range(1, 4):
+    print("Saisie des informations pour la personne", i, ":")
+    nom = input("Nom : ")
+    age = input("Âge : ")
+    pays = input("Pays d'origine : ")
+
+    # Création d'un dictionnaire pour stocker les informations de la personne
+    personne = {"Nom": nom, "Âge": age, "Pays d'origine": pays}
+
+    # Ajout du dictionnaire à la liste des personnes
+    personnes.append(personne)
+
+# Affichage des informations de chaque personne
+print("\nAffichage des informations :")
+for i, personne in enumerate(personnes):
+    print("Personne", i + 1, ":")
+    print("Nom :", personne["Nom"])
+    print("Âge :", personne["Âge"])
+    print("Pays d'origine :", personne["Pays d'origine"])
+    print()
+```
+# Aprofondisement des bases
+## Classe et objets
+
+En Python, les classes sont des structures qui permettent de définir des objets avec leurs propres attributs (variables) et méthodes (fonctions).
+Un objet est une instance d'une classe.
+
+Le terme **self** est une convention utilisée en Python pour faire référence à l'instance d'un objet lui-même à l'intérieur de ses propres méthodes. Il s'agit d'un paramètre implicite que vous devez inclure en tant que premier paramètre dans la définition de chaque méthode d'une classe.
+
+- La méthode __init__ est l'initialisateur de classe. Elle est appelée automatiquement lors de la création d'un nouvel objet à partir de la classe.
+
+- La méthode __next__ est utilisée dans la définition d'un itérateur. Elle est appelée pour obtenir l'élément suivant d'une séquence lorsque l'itérateur est utilisé.
+
+- La méthode __iter__ est utilisée pour retourner un itérateur sur une séquence dans une classe. 
+
+```python
+class NombrePairs:
+    def __init__(self, limite):
+        self.limite = limite
+        self.nombre = 0
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.nombre >= self.limite:
+            raise StopIteration
+        else:
+            resultat = self.nombre
+            self.nombre += 2
+            return resultat
+
+
+# Utilisation de la classe NombrePairs pour créer l'objet nombres
+nombres = NombrePairs(10)  # Crée une instance de la classe avec une limite de 10
+
+for nombre in nombres:
+    print(nombre)
+
+# Résultat :
+# 0
+# 2
+# 4
+# 6
+# 8
+```
 
 ## Gestions des erreurs
 
@@ -443,6 +583,160 @@ finally:
     # Code à exécuter dans tous les cas
     pass
 ```
+
+## Entrée/sortie 
+
+Les entrées/sorties (E/S) sont des opérations essentielles dans la programmation, car elles permettent aux programmes de communiquer avec l'utilisateur et de manipuler des fichiers. En Python, il existe plusieurs moyens de réaliser des E/S.
+
+
+Bien sûr ! Voici un résumé de la section sur les entrées/sorties en Python, avec un exemple d'utilisation :
+
+Les entrées/sorties (E/S) sont des opérations essentielles dans la programmation, car elles permettent aux programmes de communiquer avec l'utilisateur et de manipuler des fichiers. En Python, il existe plusieurs moyens de réaliser des E/S.
+
+### **Lecture à partir de fichiers :**  
+Pour lire le contenu d'un fichier, utilisez la fonction open() en mode lecture ('r')
+
+```python 
+fichier = open('exemple.txt', 'r')
+ligne = fichier.readline()
+print(ligne)
+fichier.close()
+```
+### **Écriture dans des fichiers :**
+Pour écrire dans un fichier, ouvrez-le en mode écriture ('w'). Utilisez ensuite la méthode write() pour écrire du texte dans le fichier.  
+
+```python 
+fichier = open('nouveau.txt', 'w')
+fichier.write("Ceci est un exemple.")
+fichier.close()
+```
+
+### **Fermeture de fichiers :**
+Il est important de fermer correctement les fichiers après les avoir utilisés pour libérer les ressources système. 
+Utilisez la méthode close() pour fermer un fichier. Pour éviter d'oublier de le faire, vous pouvez utiliser le bloc with. Par exemple :
+```python
+with open('exemple.txt', 'r') as fichier:
+ligne = fichier.readline()
+print(ligne)
+```
+
+### **Entrées de l'utilisateur :**
+La fonction input() permet de demander à l'utilisateur de saisir des données via la console. Le résultat est généralement stocké dans une variable pour une utilisation ultérieure. Par exemple :
+
+```python
+nom = input("Quel est votre nom ? ")
+print("Bonjour, " + nom + " !")
+```
+
+### **Formatage de chaînes de caractères :**
+Pour créer des sorties plus lisibles, vous pouvez formater des chaînes de caractères avec des valeurs variables. 
+Les f-strings sont une méthode pratique pour formater les chaînes de caractères en incluant des variables dans le texte.
+De plus, cela permettent également d'utiliser des expressions Python dans les accolades.
+Pour utiliser des f-strings, ajoutez un f avant les guillemets de la chaîne et placez les variables souhaitées entre accolades {}. Par exemple :
+```python
+nom = "Alice"
+age = 25
+message = f"Je m'appelle {nom} et j'ai {age} ans."
+print(message)
+a = 5
+b = 3
+resultat = f"Le résultat de {a} + {b} est {a + b}."
+print(resultat)
+```
+
+Des notations permettent de choisir le format d'écritude :
+1. {} : Cette notation est utilisée pour insérer une valeur sans spécifier de format particulier. Par exemple : {}.
+
+2. {:<width} : Cette notation spécifie une largeur minimale pour l'insertion et aligne la valeur à gauche. Par exemple : {:<10}.
+
+3. {:>width} : Cette notation spécifie une largeur minimale pour l'insertion et aligne la valeur à droite. Par exemple : {:>10}.
+
+4. {:^width} : Cette notation spécifie une largeur minimale pour l'insertion et centre la valeur. Par exemple : {:^10}.
+
+5. {:.precisionf} : Cette notation spécifie une précision décimale pour les valeurs flottantes. Par exemple : {:.2f} permet d'afficher seulement deux chiffres après la virgule.
+
+6. {:+} : Cette notation force l'affichage d'un signe "+" pour les valeurs numériques positives. Par exemple : {:+}.
+
+7. {:0width} : Cette notation spécifie une largeur minimale pour l'insertion et remplit les espaces vides avec des zéros. Par exemple : {:04}.
+
+## Exercice Aprofondisement
+
+### Énoncé de l'exercice : 
+
+Créez une classe Etudiant qui représente un étudiant avec les attributs suivants :
+
+- nom : le nom de l'étudiant (chaîne de caractères)
+- age : l'âge de l'étudiant (entier)
+- notes : une liste de notes de l'étudiant (liste de nombres à virgule flottante entre 1 et 6)
+
+La classe Etudiant devrait avoir les méthodes suivantes :
+
+- ajouter_note : ajoute une note à la liste des notes de l'étudiant
+- calculer_moyenne : calcule et retourne la moyenne des notes de l'étudiant
+afficher_informations : affiche les informations de l'étudiant (nom, âge et moyenne des notes)
+- Assurez-vous de gérer les erreurs potentielles, comme par exemple si l'âge n'est pas un entier valide, note invalide et/ou si la liste des notes est vide.
+
+Ensuite, créez un programme principal qui demande à l'utilisateur d'entrer les informations d'un étudiant (nom, âge et notes) et utilise la classe Etudiant pour créer une instance de cet étudiant, ajouter les notes, calculer la moyenne et afficher les informations de l'étudiant à l'écran.
+
+### Correction :
+```python 
+class Etudiant:
+    def __init__(self, nom, age):
+        self.nom = nom
+        self.age = age
+        self.notes = []
+
+    def ajouter_note(self, note):
+        if note < 1 or note > 6:
+            raise ValueError("Note invalide ! La note doit être entre 1 et 6.")
+        self.notes.append(note)
+
+    def calculer_moyenne(self):
+        if not self.notes:
+            raise ValueError("La liste des notes est vide !")
+        return sum(self.notes) / len(self.notes)
+
+    def afficher_informations(self):
+        print("Informations de l'étudiant :")
+        print("Nom :", self.nom)
+        print("Âge :", self.age)
+        try:
+            moyenne = self.calculer_moyenne()
+            print("Moyenne des notes :", moyenne)
+        except ValueError as e:
+            print("Erreur :", str(e))
+
+
+# Programme principal
+nom = input("Entrez le nom de l'étudiant : ")
+age = input("Entrez l'âge de l'étudiant : ")
+
+try:
+    age = int(age)
+except ValueError:
+    print("Erreur : L'âge doit être un entier valide.")
+    exit()
+
+etudiant = Etudiant(nom, age)
+
+notes = input("Entrez les notes de l'étudiant (séparées par des espaces) : ").split()
+for note in notes:
+    try:
+        note = float(note)
+        etudiant.ajouter_note(note)
+    except ValueError:
+        print("Erreur : La note doit être un nombre valide.")
+        exit()
+
+etudiant.afficher_informations()
+
+```
+# Allez plus loin
+
+Python est un language OpenSource. cela veux dire qu'une communoté alimmente le language par beaucoup de contribution.
+
+Python est un langage de programmation open source. Cela signifie que son code source est disponible publiquement et que la communauté Python peut contribuer à son développement et à son amélioration.
+
 ## Paquets 
 
 Python possède un grand nombre de Paquets  qui permettent d'ajouter des fonctionnalités à Python.
@@ -614,8 +908,8 @@ Hello!
 
 Il est possible de créer des routes qui permettent de définir des URL.
 
-Souvent on ajoute des templates HTML avec le paquets **jinja2** et des zone de remplissage par variables avec **mustache**.
-
+Souvent on ajoute des templates HTML avec le paquets **jinja2** et des zone de remplissage par variables avec **mustache**.  
+Code python :
 ```python
 from flask import Flask, render_template
 
@@ -627,7 +921,7 @@ def hello_world():
     return render_template('index.html', name='John')
 
 ```
-
+Code Html:
 ```html
 <!DOCTYPE html>
 <html lang="fr">
@@ -720,7 +1014,10 @@ Il est possible de lancer Jupyter notebook et d'ouvrir une console python dans l
 ipython console --existing
 ```
 
+# A vous de jouer
 
+Bonne suite d'aprentisage ou de rappel.
+Pensé que ce n'est jamais vraiment fini
 
 
 
