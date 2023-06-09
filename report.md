@@ -72,6 +72,105 @@ print(hashtable.get("animal"))  # Affiche None (l'élément a été supprimé)
 
 
 
+## Structure de contrôle
+
+### Condition
+
+Les instructions conditionnelles permettent d'exécuter un bloc de code si une condition est vérifiée.
+
+```python
+# Exemple d'instruction conditionnelle
+if x > 0:
+    print("x est positif")
+elif x == 0:
+    print("x est nul")
+else:
+    print("x est négatif")
+```
+
+### Boucle
+
+Les boucles permettent d'exécuter un bloc de code plusieurs fois.
+
+```python
+# Exemple de boucle for
+for i in range(5):
+    print(i)
+
+# Résultat :
+# 0
+# 1
+# 2
+# 3
+# 4
+```
+
+```python
+# Exemple de boucle while
+i = 0
+while i < 5:
+    print(i)
+    i += 1
+
+# Résultat :
+# 0
+# 1
+# 2
+# 3
+# 4
+```
+
+### Instruction de contrôle 
+
+break : permet de sortir d'une boucle
+
+continue : permet de passer à l'itération suivante d'une boucle
+
+pass : permet de ne rien faire
+
+```python
+# Exemple d'instruction break
+for i in range(5):
+    if i == 2:
+        break
+    print(i)
+
+# Résultat :
+# 0
+# 1
+```
+
+```python
+# Exemple d'instruction continue
+for i in range(3):
+    if i == 2:
+        continue
+    print(i)
+
+# Résultat :
+# 0
+# 1
+# 3
+```
+
+```python
+# Exemple d'instruction pass
+for i in range(4):
+    if i == 2:
+        pass
+    else :
+        print(i)
+
+# Résultat :
+# 0
+# 1
+# 3
+```
+
+
+
+
+
 
 ## Classe et objets
 
@@ -262,9 +361,11 @@ def addition(a, b):
 - **a** et **b** sont les paramètres de la fonction. Ils peuvent être utilisés dans le corps de la fonction.
 - **return** est un mot-clé qui permet de renvoyer une valeur à l'appelant de la fonction.
 
-Des fonctions prédéfinies sont disponibles dans Python.
+Il existe de nombreuses fonctions prédéfinies (aussi appelées fonctions intégrées ou fonctions natives) en Python qui sont disponibles pour une utilisation directe dans vos programmes. Voici quelques exemples de fonctions prédéfinies couramment utilisées en Python :
 
-telles que :
+Telles que :
+
+- **input()** : permet de demander à l'utilisateur d'entrer une valeur.
 - **print()** : affiche un message à l'écran.
 - **len()** : renvoie la longueur d'une séquence.
 - **all()** : renvoie True si tous les éléments d'une séquence sont True.
@@ -322,8 +423,26 @@ fonction_example(1, 2, 3, nom='Alice', age=25) # Affiche :
 # Argument nommé : age = 25
 ```
 
+## Gestions des erreurs
 
+Lors de l'exécution d'un programme, des erreurs peuvent survenir. Ces erreurs sont appelées des exceptions. Il est possible de gérer ces exceptions avec des blocs.
 
+1. try/except/else/finally
+
+```python
+try:
+    # Code susceptible de provoquer une exception
+    pass
+except:
+    # Code à exécuter en cas d'exception levée dans le bloc try
+    pass
+else:
+    # Code à exécuter si aucune exception n'est levée dans le bloc try
+    pass
+finally:
+    # Code à exécuter dans tous les cas
+    pass
+```
 ## Paquets 
 
 Python possède un grand nombre de Paquets  qui permettent d'ajouter des fonctionnalités à Python.
