@@ -1,11 +1,40 @@
 ---
-title: "Python - rappels"
+title: "Python"
 subtitle: "Rappels des bases de python"
-author:
-- "Antonin Kenzi"
+author: "Antonin Kenzi"
 professor: "Yves Chevallier"
-date: "06.06.2023"
+date: "09.06.2023"
+header-left: "\\headerlogo"
+header-center: ""
+header-right: "\\thetitle"
+footer-left: "Page \\thepage\\ sur \\pageref{LastPage}"
+footer-center: ""
+footer-right: "\\thedate"
+listings: true
+toc: true
+toc-own-page: true
+titlepage: true
+titlepage-rule-color: da291c
+logo: "./heig-vd.pdf"
+logo-width: 30mm
+code-block-font-size: "\\footnotesize"
+lang: "fr-CH"
+header-includes:
+- |
+  ```{=latex}
+  \usepackage{lastpage}
+  \usepackage{tabularx}
+  \usepackage{subcaption}
+  \usepackage{graphicx}
+  \usepackage{float}
+  ```
+- |
+  ```{=latex}
+  \newcommand{\headerlogo}{\raisebox{0pt}[0pt]{\includegraphics[width=1cm]{heig-vd.pdf}}}
+  ```
 ---
+
+
 # qu'est ce que python ? 
 
 ## Historique de Python :
@@ -79,6 +108,8 @@ Si la mise en œuvre est facile à expliquer, c'est peut-être une bonne idée.
 Les espaces de noms sont une excellente idée - faisons-en plus !
 ```
 
+\newpage
+
 Voici les principes clés de la charte de Python (un peu plus expliqué) :
 
 - Lisibilité compte :
@@ -107,6 +138,8 @@ Python accueille et encourage la diversité des utilisateurs, des contributeurs 
 
 - L'évolution continue :
 Python est un langage en constante évolution. Il s'adapte et se développe pour répondre aux besoins changeants des utilisateurs et de la technologie.
+
+\newpage
 
 # Initiation
 
@@ -171,6 +204,8 @@ del hashtable["animal"]
 print(hashtable.get("animal"))  # Affiche None (l'élément a été supprimé)
 ```
 
+\newpage
+
 ## Structure de contrôle
 
 ### Condition
@@ -193,38 +228,37 @@ Les boucles permettent d'exécuter un bloc de code plusieurs fois.
 
 La boucle for est une structure de contrôle en Python utilisée pour itérer sur une séquence d'éléments, tels qu'une liste, un tuple, une chaîne de caractères, etc. La syntaxe générale de la boucle for est la suivante :
 ```python
-# Exemple de boucle for
-for i in range(3):
+i = 0
+# Exemple d'instruction break
+for i in range(2):
     print(i)
-
 # Résultat :
 # 0
 # 1
-# 2
 ```
 La boucle while est une structure de contrôle en Python qui permet d'exécuter un bloc de code tant qu'une condition donnée est évaluée à True. La syntaxe générale de la boucle while est la suivante :
 ```python
 # Exemple de boucle while
 i = 0
-while i < 3:
+while i < 2:
     print(i)
     i += 1
-
 # Résultat :
 # 0
 # 1
-# 2
 ```
 
 Les compréhensions de listes (list comprehensions) sont une fonctionnalité puissante de Python qui permet de créer facilement des listes à partir d'une syntaxe concise.
+
+
 ```python
 liste_carres_pairs = [x**2 for x in range(1, 11) if x % 2 == 0]
-
 # Affichage de la liste résultante
 print(liste_carres_pairs)
 # [4, 16, 36, 64, 100]
 ```
 
+\newpage
 
 ### Instruction de contrôle 
 
@@ -273,11 +307,12 @@ for i in range(4):
 # 3
 ```
 
+\newpage
+
 ## Opérateur
 Un opérateur est un symbole ou un mot-clé utilisé dans un langage de programmation pour effectuer une opération sur des valeurs ou des variables.
 
-### Classic :
-
+### Classic (liste non exhaustive):
 1. **Opérateurs arithmétiques**
 ```python 
     x = 5 + 3   # Addition
@@ -285,7 +320,6 @@ Un opérateur est un symbole ou un mot-clé utilisé dans un langage de programm
     z = 4 * 2   # Multiplication
     w = 15 / 3  # Division
     h = 15//3   # Division entière
-    i = 2**3    # Exponentiation 
 ```
 2. **Opérateurs de comparaison :**
 ```python 
@@ -297,7 +331,6 @@ c = 2 <= 8  # Infériorité ou égalité
 ```python 
 condition1 = (x > 0) and (y < 10)  # Opérateur logique ET
 condition2 = (a == True) or (b == True)  # Opérateur logique OU
-condition3 = not condition1  # Opérateur logique NON
 ```
 5. **Opérateurs d'affectation :**
 ```python 
@@ -309,8 +342,7 @@ y -= 3  # Soustraction et affectation
 6. **Opérateurs de concaténation :**  
 ```python 
 chaine1 = "Bonjour"
-chaine2 = "Python"
-resultat = chaine1 + " " + chaine2  # Concaténation de chaînes
+resultat = chaine1 + " Python"  # Concaténation de chaînes
 
 noms = ["Alice", "Bob", "Charlie"]
 ages = [25, 30, 35]
@@ -374,6 +406,7 @@ print(a is not b)  # Vérifie si 'a' et 'b' ne font pas référence au même obj
 # Résultat 
 # True
 ```
+\newpage
 
 10. **Opérateurs ternaires :**
 ```python
@@ -409,6 +442,7 @@ informations_combinees = {**informations_base, **informations_supplementaires}
 print(informations_combinees) # Affiche {'nom': 'Alice', 'age': 25, 'ville': 'Paris', 'profession': 'Ingénieur'}
 ```
 
+\newpage
 
 ## Fonctions
 
@@ -434,7 +468,7 @@ Telles que :
 - **any()** : renvoie True si au moins un élément d'une séquence est True.
 - **enumerate()** : renvoie un objet énumérable.
 - **max()** : renvoie le plus grand élément d'une séquence.
-- **min()** : renvoie le plus petit élément d'une séquence.  
+- **min()** : renvoie le plus petit élément d'une séquence.
 - **range()** : renvoie une séquence de nombres.
 
 Et bien d'autres encore...
@@ -450,6 +484,9 @@ liste = [1, 2, 3, 4, 5]
 resultat = map(carre, liste)
 print(list(resultat))  # Renvoie [1, 4, 9, 16, 25]
 ```
+
+\newpage
+
 - **filter** : filtre les éléments d'une séquence.
 ```python
 def est_pair(x):
@@ -462,10 +499,10 @@ print(list(resultat))  # Renvoie [2, 4]
 
 Lors de la définition d'une fonction en Python, les paramètres spéciaux *args et **kwargs peuvent être utilisés pour accepter un nombre variable d'arguments positionnels et d'arguments nommés.
 
-### **args**
+### args :
 L'usage de *args permet de capturer un nombre variable d'arguments positionnels (ordre important) et de les regrouper dans un tuple.
 
-### **kwargs**
+### kwargs :
 L'usage de **kwargs permet de capturer un nombre variable d'arguments nommés et de les regrouper dans un dictionnaire.
 
 ```python
@@ -484,11 +521,15 @@ fonction_example(1, 2, 3, nom='Alice', age=25) # Affiche :
 # Argument nommé : nom = Alice
 # Argument nommé : age = 25
 ```
+
+\newpage
+
 ## Exercice première partie
 
 ### Énoncé de l'exercice : 
 
 Écrivez un programme Python qui demande à l'utilisateur de saisir le nom, l'âge et le pays d'origine de trois personnes **(Utiliser la fonction input())**, puis stocke ces informations dans une liste de dictionnaires. Ensuite, le programme doit afficher les informations de chaque personne en utilisant une boucle for.
+
 
 ### Correction :
 ```python 
@@ -517,7 +558,11 @@ for i, personne in enumerate(personnes):
     print("Pays d'origine :", personne["Pays d'origine"])
     print()
 ```
+
+\newpage
+
 # Aprofondisement des bases
+
 ## Classe et objets
 
 En Python, les classes sont des structures qui permettent de définir des objets avec leurs propres attributs (variables) et méthodes (fonctions).
@@ -584,6 +629,8 @@ finally:
     pass
 ```
 
+\newpage
+
 ## Entrée/sortie 
 
 Les entrées/sorties (E/S) sont des opérations essentielles dans la programmation, car elles permettent aux programmes de communiquer avec l'utilisateur et de manipuler des fichiers. En Python, il existe plusieurs moyens de réaliser des E/S.
@@ -593,7 +640,7 @@ Bien sûr ! Voici un résumé de la section sur les entrées/sorties en Python, 
 
 Les entrées/sorties (E/S) sont des opérations essentielles dans la programmation, car elles permettent aux programmes de communiquer avec l'utilisateur et de manipuler des fichiers. En Python, il existe plusieurs moyens de réaliser des E/S.
 
-### **Lecture à partir de fichiers :**  
+### Lecture à partir de fichiers :
 Pour lire le contenu d'un fichier, utilisez la fonction open() en mode lecture ('r')
 
 ```python 
@@ -602,7 +649,7 @@ ligne = fichier.readline()
 print(ligne)
 fichier.close()
 ```
-### **Écriture dans des fichiers :**
+### Écriture dans des fichiers :
 Pour écrire dans un fichier, ouvrez-le en mode écriture ('w'). Utilisez ensuite la méthode write() pour écrire du texte dans le fichier.  
 
 ```python 
@@ -611,7 +658,7 @@ fichier.write("Ceci est un exemple.")
 fichier.close()
 ```
 
-### **Fermeture de fichiers :**
+### Fermeture de fichiers :
 Il est important de fermer correctement les fichiers après les avoir utilisés pour libérer les ressources système. 
 Utilisez la méthode close() pour fermer un fichier. Pour éviter d'oublier de le faire, vous pouvez utiliser le bloc with. Par exemple :
 ```python
@@ -620,7 +667,7 @@ ligne = fichier.readline()
 print(ligne)
 ```
 
-### **Entrées de l'utilisateur :**
+### Entrées de l'utilisateur :
 La fonction input() permet de demander à l'utilisateur de saisir des données via la console. Le résultat est généralement stocké dans une variable pour une utilisation ultérieure. Par exemple :
 
 ```python
@@ -628,7 +675,7 @@ nom = input("Quel est votre nom ? ")
 print("Bonjour, " + nom + " !")
 ```
 
-### **Formatage de chaînes de caractères :**
+### Formatage de chaînes de caractères :
 Pour créer des sorties plus lisibles, vous pouvez formater des chaînes de caractères avec des valeurs variables. 
 Les f-strings sont une méthode pratique pour formater les chaînes de caractères en incluant des variables dans le texte.
 De plus, cela permettent également d'utiliser des expressions Python dans les accolades.
@@ -677,6 +724,8 @@ afficher_informations : affiche les informations de l'étudiant (nom, âge et mo
 - Assurez-vous de gérer les erreurs potentielles, comme par exemple si l'âge n'est pas un entier valide, note invalide et/ou si la liste des notes est vide.
 
 Ensuite, créez un programme principal qui demande à l'utilisateur d'entrer les informations d'un étudiant (nom, âge et notes) et utilise la classe Etudiant pour créer une instance de cet étudiant, ajouter les notes, calculer la moyenne et afficher les informations de l'étudiant à l'écran.
+
+\newpage
 
 ### Correction :
 ```python 
@@ -731,6 +780,9 @@ for note in notes:
 etudiant.afficher_informations()
 
 ```
+
+\newpage
+
 # Allez plus loin
 
 Python est un language OpenSource. cela veux dire qu'une communoté alimmente le language par beaucoup de contribution.
@@ -762,22 +814,22 @@ print(pi)  # Affiche la valeur de pi
 
 Dans ces paquets, il y a des modules qui sont très utiles pour le développement d'applications.
 
-### **math**
+### math
 Le module math contient des fonctions mathématiques.
 
-### **random**
+### random 
 Le module random contient des fonctions pour générer des nombres aléatoires.
 
-### **datetime**
+### datetime 
 Le module datetime contient des classes pour manipuler des dates et des heures.
 
-### **os**
+### os
 Le module os contient des fonctions pour interagir avec le système d'exploitation.  
 
-### **sys**
+### sys
 Le module sys contient des fonctions et des variables qui permettent d'interagir avec l'interpréteur Python.
 
-### **NamedTuple**
+### NamedTuple
 Le module collections contient la classe NamedTuple qui permet de créer des tuples nommés.
 
 Cela permet de créer des objets immuables avec des attributs nommés. Ce qui rend le code plus lisible.
@@ -795,11 +847,19 @@ alice = Personne('Alice', 25, 'Paris')
 print(alice.nom)   # Affiche 'Alice'
 print(alice.age)   # Affiche 25
 print(alice.ville) # Affiche 'Paris'
-
-
 ```
+## Gestionnaire de paquets
+
+Le téléchargement de paquets Python se fait généralement à l'aide d'un gestionnaire de paquets tel que pip. Un gestionnaire de paquets est un outil qui facilite l'installation, la mise à jour et la suppression de paquets ou de modules Python.
+
+Par exemple, pour installer le paquet numpy, vous pouvez exécuter
+```pip install numpy```. 
+Le gestionnaire de paquets téléchargera automatiquement les fichiers nécessaires à partir du Python Package Index (PyPI) et les installera sur votre système.
+\newpage
 
 ### Numpy
+
+Site : https://numpy.org/
 
 Numpy est un paquets  qui permet de manipuler des tableaux multidimensionnels et des matrices.
 Ce paquets est très utilisé pour tout ce qui est des calculs scientifiques.
@@ -842,7 +902,49 @@ print(a[:2]) # Affiche [1 2]
 print(a[-2:]) # Affiche [5 6]
 ```
 
+\newpage
+
+### Matplotlib
+
+Site : https://matplotlib.org/
+
+Matplotlib est une bibliothèque de visualisation de données en Python très populaire. Elle offre une grande flexibilité pour créer des graphiques et des visualisations de manière simple et efficace.
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+# Création d'une figure
+fig = plt.figure()
+
+#Creation d'un vecteur x
+x = np.linspace(0, 2, 100)
+
+# Création d'un vecteur y
+y = x ** 2
+# Création d'un graphique
+plt.plot(x, y)
+plt.xlabel('x')
+plt.ylabel('y')
+plt.title('y = x^2')
+plt.grid(True)
+
+#savegarde du graphique
+fig.savefig('graphique.png')
+
+# Affichage du graphique
+plt.show()
+```
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{graphique.png}
+    \caption{Résultat de l'exemple}
+\end{figure}
+
 ### Click 
+
+Site : https://click.palletsprojects.com/en/8.1.x/
 
 Click est un paquets qui permet de créer des interfaces en ligne de commande.
 
@@ -867,6 +969,8 @@ Click génère automatiquement une aide complète pour vos commandes et options.
 
 6. Personnalisation de l'interface :  
 Utilisez les options de personnalisation de Click pour ajuster l'apparence de l'interface de ligne de commande.
+
+\newpage
 
 ```python
 import click
@@ -902,7 +1006,12 @@ Hello!
 Hello!
 ```
 
+
+\newpage
+
 ### Flask
+
+Site : https://flask.palletsprojects.com/en/2.3.x/
 
 **Flask** est un paquets qui permet de créer des applications web.
 
@@ -934,8 +1043,7 @@ Code Html:
 </body>
 </html>
 ```
-
-
+\newpage
 
 ## Environnement virtuel
 
@@ -978,7 +1086,7 @@ env\Scripts\deactivate.bat
 ```bash
 deactivate
 ```
-
+\newpage
 ## outils logiciels
 
 ### Ipython
